@@ -83,6 +83,7 @@ class AudioRecorder(Node):
                     audio_np = (audio_np * 32767).astype(np.int16)
 
                 # ---- 构建消息 ----
+                # self.get_logger().info(f"audio_np Len: {len(audio_np)}")
                 msg = AudioFrame()
                 msg.header = Header()
                 msg.header.stamp = self.get_clock().now().to_msg()
